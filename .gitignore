@@ -1,13 +1,1 @@
-# IDE settings
-.vscode/
-.idea/
-
-# Database
-instance/
-migrations/
-
-# Python byte-code
-*.pyc
-
-# Virtual environment
-venv/
+__pychache__/
