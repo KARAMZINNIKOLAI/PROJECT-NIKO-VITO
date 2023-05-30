@@ -1,8 +1,10 @@
 from flask import render_template, request, session, redirect, url_for
 
-
 def index_page():
     return render_template("index.html")
+
+def second_page():
+    return render_template("second.html")
 
 def login_page():
     username = ""
@@ -17,3 +19,4 @@ def login_page():
 def logout():
     session.pop("username")
     return redirect(url_for("index_page"))
+

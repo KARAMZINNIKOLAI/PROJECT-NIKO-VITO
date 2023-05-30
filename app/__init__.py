@@ -21,6 +21,8 @@ def create_app():
     app.add_url_rule("/login/", view_func=views.login_page, methods=["GET", "POST"])
     app.add_url_rule("/logout/", view_func=views.logout)
 
+    app.add_url_rule("/form/", view_func=views.second_page)
+
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
     db.init_app(app)
     migrate.init_app(app, db)
