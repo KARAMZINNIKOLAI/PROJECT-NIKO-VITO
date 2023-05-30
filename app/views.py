@@ -20,5 +20,5 @@ def logout():
     session.pop("username")
     return redirect(url_for("index_page"))
 
-#Для нового коммита
+#Для исправленного коммита
 
