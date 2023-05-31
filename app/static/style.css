@@ -4,12 +4,14 @@ body {
     background-color: #FAE7B5; 
     color: #333; 
   }
+
   h1 {
     color: #a52a2a; 
     font-size: 24pt; 
     font-family: sans-serif; 
     font-weight: normal; 
   }
+
   p {
     text-align: justify; 
     margin-left: 60px; 
@@ -19,3 +21,60 @@ body {
     padding-left: 10px; 
     padding-bottom: 10px; 
   }
+
+  /* Кнопки */
+
+  .btn {
+    display: inline-block; /* Строчно-блочный элемент */
+    background: #8C959D; /* Серый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    border: 4px solid black; /* Контур */
+    }
+
+  /* Заголовки */
+
+  header {
+    text-align: center; /* Центрировать */
+  }
+
+  /* На полный экран*/
+  .fullscreen {
+    display: flex;
+    flex-flow:column;
+    text-align: center;
+  }
+
+  /* Использовать, когда картинка и текст должны находиться на одном уровне*/
+  .imgandtext {
+    float: left; /* Привязать к левому краю объекта другой, находящийся в одном блоке*/
+  }
+
+  /* Блоки */
+
+  .div1 {
+    background-color: #4b96dc; /* заливка заднего фона блока*/
+    position: sticky; /* Блок остаётся на месте*/
+    top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
+    z-index: 1; /* На передний план */
+  }
+
+  .div2 {
+    position: relative; /* Относительное позиционироапние */
+    text-align: center;
+  }
+  
+  .div3 {
+    position: absolute; /* Абсолютное позиционироапние */
+    top: 10%; /* Относительно в нашем случае картинки отступ 10% от верха */
+    color: white;
+    width: 100%;
+    text-align:center;
+    font-size: 30px;
+  }
+
+
+
+  

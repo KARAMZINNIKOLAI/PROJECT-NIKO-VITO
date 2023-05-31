@@ -11,30 +11,37 @@
     <a href="{{ url_for('login_page') }}">Вход</a>
     {% endif %}
 </div>
-<h1><i>Техническое задание</i></h1>
-<h1><i>Онлайн</i></h1>
 
-<div>
-    <header align="center">
+<div class="div1">
+    <h1><i>Техническое задание</i></h1>
+    <h1><i>Онлайн</i></h1>
+</div>
+
+<div class="div2">
+    <img alt="" src="{{ url_for('static', filename='Стартовая страница1.jpg') }}">  
+    <div class="div3">
         <h2>Составьте техническое задание</h2>
         <h2>и отправьте его разработчику</h2>
         <h3>Онлайн генератор ТЗ</h3>
-        <img alt="" src="{{ url_for('static', filename='Стартовая страница1.jpg') }}">  
-        <a href="{{ url_for('second_page') }}" class="btn">Разработать ТЗ</a>
-    </header>
+        <br>
+    </div>
+</div>
+
+<div class="div4">
+    <a href="{{ url_for('second_page') }}" class="btn fullscreen">Разработать ТЗ</a>
 </div>
 
 <div>
-    <header align="center">
+    <header>
         <hr>
         <h1>Техническое задание - </h1>
         <h2>это документ, который точно отражает требования к будущему проекту и по которому выполняется разработка.</h2>
         <hr>
     </header>
 </div>
-
-<div>
-    <img alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}">  
+ 
+<div>   
+    <img class="imgandtext" alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}"> 
     <h1>Всего три шага:</h1>
     <br>
     <h1>1. Зайти в конструктор</h1>
