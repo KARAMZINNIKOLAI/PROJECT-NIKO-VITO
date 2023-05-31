@@ -17,18 +17,17 @@
     <h1><i>Онлайн</i></h1>
 </div>
 
-<div class="div2">
+<div class="div2 fullscreen">
     <img alt="" src="{{ url_for('static', filename='Стартовая страница1.jpg') }}">  
     <div class="div3">
         <h2>Составьте техническое задание</h2>
         <h2>и отправьте его разработчику</h2>
         <h3>Онлайн генератор ТЗ</h3>
-        <br>
     </div>
 </div>
-
-<div class="div4">
-    <a href="{{ url_for('second_page') }}" class="btn fullscreen">Разработать ТЗ</a>
+<br>
+<div>
+    <a href="{{ url_for('second_page') }}" class="btn_full">Разработать ТЗ</a>
 </div>
 
 <div>
@@ -39,9 +38,12 @@
         <hr>
     </header>
 </div>
- 
-<div>   
-    <img class="imgandtext" alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}"> 
+
+<div>
+    <img class="div4 imgandtext" alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}">
+</div>
+
+<div class="div5">   
     <h1>Всего три шага:</h1>
     <br>
     <h1>1. Зайти в конструктор</h1>
