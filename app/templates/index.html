@@ -39,17 +39,48 @@
     </header>
 </div>
 
-<div>
-    <img class="div4 imgandtext" alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}">
+<div class="div4">  
+    <div class="imgleft">
+        <img class="div5" alt="" src="{{ url_for('static', filename='Стартовая страница2.jpg') }}">
+    </div> 
+    <div class="textright">
+        <h1>Всего три шага:</h1>
+        <br>
+        <h1>1. Зайти в конструктор</h1>
+        <h1>2. Заполнить форму</h1>
+        <h1>3. Получить ТЗ и отправить его разработчику</h1>
+        <a href="{{ url_for('second_page') }}" class="btn">Разработать ТЗ</a>
+    </div>
 </div>
 
-<div class="div5">   
-    <h1>Всего три шага:</h1>
-    <br>
-    <h1>1. Зайти в конструктор</h1>
-    <h1>2. Заполнить форму</h1>
-    <h1>3. Получить ТЗ и отправить его разработчику</h1>
-    <a href="{{ url_for('second_page') }}" class="btn">Разработать ТЗ</a>
+<div>
+    <header>
+        <hr>
+        <h1>Техническое задание - </h1>
+        <h2>это ещё и</h2>
+        <hr>
+    </header>
+</div>
+
+<div class="div6">
+    <div class="circle">
+        <h1>1</h1>
+    </div>
+    <div class="circle">
+        <h1>2</h1>
+    </div>
+    <div class="circle"> 
+        <h1>3</h1>
+    </div>
+</div>
+
+<div class="div7">
+    <div class="rect_with_round_angles">
+    </div>
+    <div class="rect_with_round_angles">
+    </div>
+    <div class="rect_with_round_angles"> 
+    </div>
 </div>
 
 {% endblock %}

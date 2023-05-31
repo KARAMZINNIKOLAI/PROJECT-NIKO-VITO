@@ -36,6 +36,8 @@ body {
     border: 4px solid black; /* Контур */
     }
 
+    /* Использование подкласса */
+
     .btn:hover {
       display: inline-block; /* Строчно-блочный элемент */
       background: #babbbd; /* Серый цвет фона */
@@ -61,6 +63,8 @@ body {
     text-align: center;
   }
 
+  /* Использование подкласса */
+
   .btn_full:hover {
     display: inline-block; /* Строчно-блочный элемент */
     background: #babbbd; /* Серый цвет фона */
@@ -73,7 +77,6 @@ body {
     flex-flow:column;
     text-align: center;
   }
-
 
   /* Заголовки */
 
@@ -89,12 +92,22 @@ body {
   }
 
   /* Использовать, когда картинка и текст должны находиться на одном уровне*/
-  .imgandtext {
+  .imgleft {
     float: left; /* Привязать к левому краю объекта другой, находящийся в одном блоке*/
-
+    width: 100%;
+    height: 100%;
+  }
+  .textright {
+    float: right; /* Привязать к левому краю объекта другой, находящийся в одном блоке*/
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    flex-direction: column;
   }
 
   /* Блоки */
+
+  /* Самый верхний иекси сайта, имеющий липкое позиционирование */
 
   .div1 {
     background-color: #4b96dc; /* Заливка заднего фона блока*/
@@ -102,6 +115,8 @@ body {
     top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
     z-index: 1; /* На передний план */
   }
+
+  /* Картинка имеет ширину, равной экрану */ 
 
   .div2 {
     position: relative; /* Относительное позиционирование */
@@ -111,6 +126,7 @@ body {
     height: auto;
   }
   
+  /* Наложение белого текста поверх картинки */
   .div3 {
     position: absolute; /* Абсолютное позиционирование */
     top: 10%; /* Относительно в нашем случае картинки отступ 10% от верха */
@@ -120,13 +136,54 @@ body {
     font-size: 30px; /* Размер текста */ 
   }
 
+  /* Картинка и текст используются на одном уровне, при этом имея одинаковую высоту */
   .div4 {
-    max-width: 50%;
-    min-width: 50%;
+    display: flex; /* Создаёт flex-блок, где все поместишиеся туда блоки имеют одинаковую высоту*/
+    justify-content: center; /* Собирает все блоки в центр */
+    align-items: center; /* Вертикальное центрирование во flex-блоках */
   }
-  
+   /* Чтобы размер картинки не менялся */
   .div5 {
-    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
   }
 
+  /* Круги и цифры в них */
   
+  .div6 {
+    margin-top: 100px;
+    display: flex;
+    justify-content:space-around;
+    font-size: 2rem;
+  }
+
+  .circle {
+    width: 100px; 
+    height: 100px;
+    background: #83A7C9;
+    border-radius: 50%;
+  }
+
+  .div7 {
+    display: flex;
+    justify-content:space-around;
+  }
+
+  .rect_with_round_angles {
+    width: 400px; 
+    height: 600px;
+    background: #83A7C9;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+
+  .div21 {
+    background-color: #4b96dc; /* Заливка заднего фона блока*/
+    position: sticky; /* Блок остаётся на месте */
+    top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
+    z-index: 1; /* На передний план */;
+  }
+
+  .link {
+    text-decoration: none;
+  }
