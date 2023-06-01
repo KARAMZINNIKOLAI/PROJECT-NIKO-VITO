@@ -13,12 +13,20 @@
 </div>
 
 <div class="div1">
-    <h1>Техническое задание</h1>
-    <h1>Онлайн</h1>
+    <div>
+        <a href="{{ url_for('index_page') }}" class="link">Техническое задание <br> Онлайн</a>
+    </div>
 </div>
 
-<div class="div2 fullscreen">
-    <img alt="" src="{{ url_for('static', filename='Стартовая страница1.jpg') }}">  
+<div class="photo-container">    
+    <div class="photo-1">
+        <img src="{{ url_for('static', filename='Стартовая страница1.jpg') }}" />
+    </div>
+    <div class="photo-2">
+        <img src="{{ url_for('static', filename='Стартовая страница1.2.jpg') }}" />
+    </div>
+</div>
+    
     <div class="div3">
         <h2>Составьте техническое задание</h2>
         <h2>и отправьте его разработчику</h2>
