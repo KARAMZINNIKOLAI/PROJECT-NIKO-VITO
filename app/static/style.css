@@ -9,7 +9,7 @@ body {
     color: #a52a2a; 
     font-size: 24pt; 
     font-family: sans-serif; 
-    font-weight: normal; 
+    font-weight: bold; 
   }
 
   /* p {
@@ -105,15 +105,79 @@ body {
     flex-direction: column;
   }
 
+  /* Ссылка */
+
+  .link {
+    text-decoration: none;
+  }
+
+  /* Звезда */ 
+
+  #star {
+    float: left;
+    width: 0%;
+    width: 0;
+    height: 0;
+    margin: 50px 0;
+    color: #fc2e5a;
+    position: relative;
+    display: block;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #fc2e5a;
+    border-left: 100px solid transparent;
+    -moz-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+  }
+
+#star:before {
+  height: 0;
+  width: 0;
+  position: absolute;
+  display: block;
+  top: -45px;
+  left: -65px;
+  border-bottom: 80px solid #fc2e5a;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  content: '';
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
+
+#star:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: -105px;
+  color: #fc2e5a;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid #fc2e5a;
+  border-left: 100px solid transparent;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  -o-transform: rotate(-70deg);
+}
+
   /* Блоки */
 
   /* Самый верхний иекси сайта, имеющий липкое позиционирование */
 
   .div1 {
-    background-color: #4b96dc; /* Заливка заднего фона блока*/
+    background-color: #4bdc68; /* Заливка заднего фона блока*/
     position: sticky; /* Блок остаётся на месте */
     top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
     z-index: 1; /* На передний план */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 3vh;
   }
 
   /* Картинка имеет ширину, равной экрану */ 
@@ -142,6 +206,7 @@ body {
     justify-content: center; /* Собирает все блоки в центр */
     align-items: center; /* Вертикальное центрирование во flex-блоках */
   }
+
    /* Чтобы размер картинки не менялся */
   .div5 {
     max-width: 100%;
@@ -154,7 +219,6 @@ body {
     margin-top: 100px;
     display: flex;
     justify-content:space-around;
-    font-size: 2rem;
   }
 
   .circle {
@@ -167,23 +231,58 @@ body {
   .div7 {
     display: flex;
     justify-content:space-around;
+    position: relative;
   }
 
   .rect_with_round_angles {
     width: 400px; 
-    height: 600px;
+    height: 300px;
     background: #83A7C9;
     border-radius: 5px;
     margin-top: 50px;
+    position: relative;
   }
+
+  .div8 {
+    width: 100%; 
+    height: auto;
+    display: flex;
+    justify-content:space-around;
+    text-align:center;
+    position: absolute;
+    top: 45%;
+  }
+
+  .div9 {
+    display: flex;
+    justify-content:space-around;
+    max-width: 380px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    flex-direction: row;
+  }
+
+  .div10 {
+    margin-top: 50px;
+    height: 20vh;
+  }
+
+  .div11 {
+    display: flex; 
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 10vh;
+  }
+
+    .text_with_star {
+      float: right; /* Текст крепится справа к звезде */
+      width: 40vh; /* Текст занимает % своего родительского блока */
+    }
 
   .div21 {
     background-color: #4b96dc; /* Заливка заднего фона блока*/
     position: sticky; /* Блок остаётся на месте */
     top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
     z-index: 1; /* На передний план */;
-  }
-
-  .link {
-    text-decoration: none;
   }
