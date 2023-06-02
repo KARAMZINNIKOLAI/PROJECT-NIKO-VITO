@@ -94,20 +94,22 @@ header {
 }
 
 /* На полный экран */
+
 .fullscreen {
   display: flex;
   flex-flow:column;
   text-align: center;
 }
 
-/* Использовать, когда картинка и текст должны находиться на одном уровне*/
+/* Использовать, когда картинка и текст должны находиться на одном уровне */
+
 .imgleft {
-  float: left; /* Привязать к левому краю объекта другой, находящийся в одном блоке*/
+  float: left; /* Привязать к левому краю объекта другой, находящийся в одном блоке */
   width: 100%;
   height: 100%;
 }
 .textright {
-  float: right; /* Привязать к левому краю объекта другой, находящийся в одном блоке*/
+  float: right; /* Привязать к правому краю объекта другой, находящийся в одном блоке */
   width: 100%;
   height: 100%;
   text-align: center;
@@ -188,10 +190,12 @@ border-left: 100px solid transparent;
 -o-transform: rotate(-70deg);
 }
 
+/* Эффекты */
+
 /* Эффект плавно сменяющихся картинок */
 
 .photo-container {
-position: relative;
+position: relative; /* Относительно картинок идёт позиционирование в блоке div3 */
 overflow: hidden;
 box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
 margin-bottom: -40px;
@@ -307,7 +311,7 @@ animation: rotate 10s linear infinite;
 
 /* Блоки */
 
-/* Самый верхний иекси сайта, имеющий липкое позиционирование */
+/* Самый верхний текст сайта, имеющий липкое позиционирование */
 
 .div1 {
   background-color:#8C959D; /* Заливка заднего фона блока*/
@@ -321,15 +325,16 @@ animation: rotate 10s linear infinite;
 
 /* Картинка имеет ширину, равной экрану */ 
 
-.div2 {
-  position: relative; /* Относительное позиционирование */
+/*.div2 {
+  position: relative; /* Относительное позиционирование
   text-align: center;
   top: 0px;
   width: 100%;
   height: auto;
-}
+} НЕ ИСПОЛЬЗУЕТСЯ */
 
 /* Наложение белого текста поверх картинки */
+
 .div3 {
   position: absolute; /* Абсолютное позиционирование */
   top: 10%; /* Относительно в нашем случае картинки отступ 10% от верха */
@@ -337,15 +342,18 @@ animation: rotate 10s linear infinite;
   width: 100%;
   text-align:center;
   font-size: 40px; /* Размер текста */ 
-  margin-top: 5vh;
-  -webkit-text-stroke: 0.1px #333;
+  margin-top: 5vh; /* Блок просто опускается вниз, не расширяясь */
+  -webkit-text-stroke: 0.1px #333; /* Контур текста */
 }
 
+/* Техническое задание - это */
+
 #tehzadanie {
-  padding-top: 11vh;
+  padding-top: 11vh; /* Граница блока расширяется вверх, при этом содержимое блока опускается на самый низ */
 }
 
 /* Картинка и текст используются на одном уровне, при этом имея одинаковую высоту */
+
 .div4 {
   display: flex; /* Создаёт flex-блок, где все поместишиеся туда блоки имеют одинаковую высоту*/
   justify-content: center; /* Собирает все блоки в центр */
@@ -353,6 +361,7 @@ animation: rotate 10s linear infinite;
 }
 
   /* Чтобы размер картинки не менялся */
+
 .div5 {
   max-width: 100%;
   min-width: 100%;
@@ -372,7 +381,10 @@ animation: rotate 10s linear infinite;
   background: #83A7C9;
   border-radius: 50%;
   margin-bottom: 7vh;
+  border: #56a3eb solid 5px;
 }
+
+/* Техническое задание - это ещё и */
 
 .div7 {
   display: flex;
@@ -391,18 +403,20 @@ animation: rotate 10s linear infinite;
 }
 
 .div9 {
-  display: flex;
-  justify-content:space-around;
-  max-width: 380px;
-  width: 400px;
-  height: 300px;
-  align-items: center;
+  display: flex; /* Флекс-блок. Позволяет Разместить несколько объектов на одном уровне и на равных расстояниях друг от друга */
+  justify-content:space-around; /* Равное расстояние между объектами */
+  width: 400px; /* Ширина блока */
+  height: 300px; /* Высота блока */
+  align-items: center; /* Текст внутри блока по центру */
   text-align: center;
   flex-direction: row;
   background-color: #83A7C9;
-  border-radius: 15px;
+  border-radius: 15px; /* Округленные уголки */
   box-shadow: 30px 30px 20px 10px rgba(189, 189, 189, 0.538); /* ширина, высота, размытие, размер выхода тени за блок */
+  border: 5px solid #56a3eb; /* Контур */
 }
+
+/* Преимущества */
 
 .div10 {
   margin-top: 300pt;
