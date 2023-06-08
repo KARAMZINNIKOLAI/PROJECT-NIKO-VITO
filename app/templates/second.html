@@ -12,7 +12,7 @@
     {% endif %}
 </div>
 
-<div class="div1">
+<div class="Online-TehZadanie">
     <div>
         <a href="{{ url_for('index_page') }}" class="link1">Техническое задание <br> Онлайн</a>
     </div>
@@ -25,53 +25,148 @@
 <div class="div22">
     <div class="div23">
         <div class="div24">
+
+            <!-- Имя -->
             <h2 class="form_text">Имя</h2>
-            <form>
-                <input type="text" placeholder="Введите своё имя">
+            <form method="get">
+                <input name="name" type="text" placeholder="Введите своё имя" required>
             </form>
+
+            <!-- Электронный адрес -->
             <h2 class="form_text">Электронный адрес</h2>
             <h3 class="form_text">На указанный адрес поступит готовое ТЗ</h3>
             <form>
-                <input type="email" placeholder="Введите адрес электронной почты">
+                <input required type="email" placeholder="Введите адрес электронной почты">
             </form>
+
+            <!-- Типы сайтов -->
             <h2 class="form_text">Выберите тип сайта</h2>
             
             <div class="div25">
                 <div>
-                    <div><label><input type="radio" class="radio" value="1" checked name="raz"/>Интернет-магазин</label></div>
+                    <div><label><input required type="radio" class="radio" value="Internet-Shop" name="raz"/>Интернет-магазин</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="2" checked name="raz"/>Блог</label></div>
+                    <div><label><input required type="radio" class="radio" value="Blog" name="raz"/>Блог</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="3" checked name="raz"/>Игровой портал</label></div>
+                    <div><label><input required type="radio" class="radio" value="Game Portal" name="raz"/>Игровой портал</label></div>
                 </div></label>
                 <div>
-                    <div><label><input type="radio" class="radio" value="4" checked name="raz"/>Информационный сайт</label></div>
+                    <div><label><input required type="radio" class="radio" value="Info Syte" name="raz"/>Информационный сайт</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="5" checked name="raz"/>Медицинский сайт</label></div>
+                    <div><label><input required type="radio" class="radio" value="Medichine Syte" name="raz"/>Медицинский сайт</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="6" checked name="raz"/>Сайт-визитка</label></div>
+                    <div><label><input required type="radio" class="radio" value="Syte-Visitka" name="raz"/>Сайт-визитка</label></div>
                 </div>
                 <div>
-                    <div><label><input type="radio" class="radio" value="7" checked name="raz"/>Образовательный сайт</label></div>
+                    <div><label><input required type="radio" class="radio" value="Educational Syte" name="raz"/>Образовательный сайт</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="8" checked name="raz"/>Корпоративный сайт</label></div>
+                    <div><label><input required type="radio" class="radio" value="Corporative Syte" name="raz"/>Корпоративный сайт</label></div>
                     <br>
-                    <div><label><input type="radio" class="radio" value="9" checked name="raz"/>Другое (свой проект)</label></div>
+                    <div><label><input required type="radio" class="radio" value="Another" name="raz"/>Другое (свой проект)</label></div>
                     <br>
                 </div>
             </div>
+
+            <!-- Название сайта -->
             <h2 class="form_text">Название сайта</h2>
             <form>
-                <input type="text" placeholder="Введите название сайта">
+                <input required type="text" placeholder="Введите название сайта">
             </form>
+
+            <!-- Цели создаваемого сайта -->
             <h2 class="form_text">Цели создаваемого сайта</h2>
-            <textarea placeholder="Укажите несколько целей"></textarea>
+            <textarea required placeholder="Укажите несколько целей"></textarea>
+
+            <!-- Наличие конкурениов-сайтов -->
             <h2 class="form_text">Наличие конкурентов-сайтов</h2>
             <form>
-                <div class="div26"><label><input type="radio" class="radio" value="10" checked name="dva"/>Да</label></div><br>
-                <div class="div26"><label><input type="radio" class="radio" value="11" checked name="dva"/>Нет</label></div>
+                <div class="div26"><label><input required type="radio" class="radio" value="Yes" onChange="Is_it_syte_concurents(value)" name="dva"/>Да</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" value="No" onChange="Is_it_syte_concurents(value)" name="dva"/>Нет</label></div>
+
+                <!-- Первый конкурент -->
+                <div id='Block_First_Concurent' style='display: none;'>
+                    <form>
+                        <br>
+                        <h2 class="form_text">Сайт конкурента</h2>
+                        <br>
+                        <input required type="text" value="" placeholder="Первый конкурент" onChange="Otobrazhenie_Block_Second_Concurent(value)">
+                    </form>
+                </div>
+
+                <!-- Второй конкурент -->
+                <div id='Block_Second_Concurent' style='display: none;'>
+                    <form>
+                        <br>
+                        <input type="text" value="" placeholder="Второй конкурент" onChange="Otobrazhenie_Block_Third_Concurent(value)">
+                    </form>
+                </div>
+
+                <!-- Третий конкурент -->
+                <div id='Block_Third_Concurent' style='display: none;'>
+                    <form>
+                        <br>
+                        <input type="text" placeholder="Третий конкурент">
+                    </form>
+                </div>
+            </form>
+            <br>
+
+            <!-- Преимущества сайта -->
+            <div id='Advantages' style='display: none;' align="center">
+                <h2 class="form_text">Преимущества вашего сайта</h2>
+                <textarea required placeholder="Опишите преимущества вашего сайта перед сайтами-конкурентами"></textarea>
+            </div>
+
+            <!-- Требования к функционалу сайта -->
+            <h2 class="form_text">Требования к функционалу сайта</h2>
+            <form>
+                <div class="div26"><label><input required type="radio" class="radio" value="Unical" name="tri"/>Сайт с уникальным функционалом</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" value="Basic_is_another_syte" name="tri"/>Функционал на основе другого сайта</label></div><br>
+                <textarea align="center" placeholder="Напишите свои предпочтения касаемо функционала сайта, если это нужно"></textarea>
+            </form>
+
+            <!-- Требования к дизайну сайта -->
+            <h2 class="form_text">Требования к функционалу сайта</h2>
+            <h2 class="form_text">Требования к цветовой гамме</h2><br>
+            <form>
+                <div class="div26"><label><input required type="radio" class="radio" value="Me" name="chetire"/>Предложить цветовую гамму сайта</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" value="Developer" name="chetire"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="Напишите свои предпочтения касаемо дизайна сайта, если это нужно"></textarea>
+            </form>
+            <h2 class="form_text">Дизайн</h2><br>
+            <form>
+                <div class="div26"><label><input required type="radio" class="radio" value="Me" name="chetire"/>Предложить дизайн</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" value="Developer" name="chetire"/>Предлагает разработчик</label></div><br>
+                <input type="url" placeholder="В случае необходимости введите ссылку на сайт, дизайн которого вам по душе">
+            </form>
+
+            <!-- Выбор языка интерфейса -->
+            <h2 class="form_text">Выберите язык интерфейса</h2>
+            <form>
+                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Русский</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Английский</label></div><br>
+                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Другой</label></div>
+            </form>
+
+            <!-- Срок разработки -->
+            <h2 class="form_text">Срок разработки</h2>
+            <form>
+                <label><input required type="date" placeholder="ДД.ММ.ГГГГ" align="center"></label>
+            </form>
+
+            <!-- Согласие на обработку персональных данных -->
+            <h2 class="form_text">Согласие на обработку персональных данных</h2>
+            <form>
+                <div class="div26"><label><input required type="radio" class="radio">Согласен на обработку персональных данных</label></div>
+            </form>
+
+            <!-- Кнопка: СОЗДАТЬ ТЕХНИЧЕСКОЕ ЗАДАНИЕ -->
+            <br><br>
+            <form>
+                <button type="submit" onclick="window.location.href='/form/complete'">Создать техническое задание</button>
             </form>
             
+            <br><br>
         </div>
     </div>
 </div>

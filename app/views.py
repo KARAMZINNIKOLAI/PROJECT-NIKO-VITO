@@ -6,6 +6,9 @@ def index_page():
 def second_page():
     return render_template("second.html")
 
+def third_page():
+    return render_template("third.html")
+
 def login_page():
     username = ""
     if request.method == "POST":
