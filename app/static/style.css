@@ -436,12 +436,74 @@ animation: rotate 10s linear infinite;
   width: 40vh; /* Текст занимает % своего родительского блока */
 }
 
-.div21 {
-  background-color:#8C959D; /* Заливка заднего фона блока*/
-  position: sticky; /* Блок остаётся на месте */
-  top: 0px; /* Для липкого позиционирования необходимый атрибут (где будет приклеен блок) */
-  z-index: 1; /* На передний план */
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  padding-left: 3vh;
+/* Форма */
+.div22 {
+  display: flex;
+  justify-content:space-around;
+}
+
+.div23 {
+  width: 80%; 
+  height: auto;
+  display: flex;
+}
+
+.div24:not(.radio) { 
+  display: flex; /* Флекс-блок. Позволяет Разместить несколько объектов на одном уровне и на равных расстояниях друг от друга */
+  width: 100%; /* Ширина блока */
+  background-color:antiquewhite;
+  box-shadow: 30px 30px 20px 10px rgba(189, 189, 189, 0.538); /* ширина, высота, размытие, размер выхода тени за блок */
+  flex-direction: column;
+}
+
+/* Типы сайтов */
+
+.div25{
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  text-align: left;
+}
+
+/* Наличие конкурентов-сайтов */
+.div26 {
+  text-align: left;
+  font-size: 30px;
+  padding-left: 5%;
+}
+
+form {
+  text-align: center;
+}
+
+/* Поля ввода большого текста */
+textarea {
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  height: 10vh;
+  font-size: 20pt; 
+  font-family: "Cuprum", cursive;
+  align-self: center;
+}
+
+/* Поля ввода маленького текста */
+input:not(.radio) {
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  height: 3vh;
+  font-size: 20pt; 
+  font-family: "Cuprum", cursive;
+}
+
+/* Тексты в форме */
+.form_text {
+  text-align: left;
+  height: 40px;
+  padding-left: 5%;
+}
+
+.radio {
+  transform: scale(1.5);
 }

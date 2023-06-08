@@ -12,14 +12,69 @@
     {% endif %}
 </div>
 
-<div class="div21">
+<div class="div1">
     <div>
         <a href="{{ url_for('index_page') }}" class="link1">Техническое задание <br> Онлайн</a>
     </div>
 </div>
 
 <header>
-    <h1><i>Заполните форму</i></h1>
+    <h1>Заполните форму</h1>
 </header>
+
+<div class="div22">
+    <div class="div23">
+        <div class="div24">
+            <h2 class="form_text">Имя</h2>
+            <form>
+                <input type="text" placeholder="Введите своё имя">
+            </form>
+            <h2 class="form_text">Электронный адрес</h2>
+            <h3 class="form_text">На указанный адрес поступит готовое ТЗ</h3>
+            <form>
+                <input type="email" placeholder="Введите адрес электронной почты">
+            </form>
+            <h2 class="form_text">Выберите тип сайта</h2>
+            
+            <div class="div25">
+                <div>
+                    <div><label><input type="radio" class="radio" value="1" checked name="raz"/>Интернет-магазин</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="2" checked name="raz"/>Блог</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="3" checked name="raz"/>Игровой портал</label></div>
+                </div></label>
+                <div>
+                    <div><label><input type="radio" class="radio" value="4" checked name="raz"/>Информационный сайт</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="5" checked name="raz"/>Медицинский сайт</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="6" checked name="raz"/>Сайт-визитка</label></div>
+                </div>
+                <div>
+                    <div><label><input type="radio" class="radio" value="7" checked name="raz"/>Образовательный сайт</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="8" checked name="raz"/>Корпоративный сайт</label></div>
+                    <br>
+                    <div><label><input type="radio" class="radio" value="9" checked name="raz"/>Другое (свой проект)</label></div>
+                    <br>
+                </div>
+            </div>
+            <h2 class="form_text">Название сайта</h2>
+            <form>
+                <input type="text" placeholder="Введите название сайта">
+            </form>
+            <h2 class="form_text">Цели создаваемого сайта</h2>
+            <textarea placeholder="Укажите несколько целей"></textarea>
+            <h2 class="form_text">Наличие конкурентов-сайтов</h2>
+            <form>
+                <div class="div26"><label><input type="radio" class="radio" value="10" checked name="dva"/>Да</label></div><br>
+                <div class="div26"><label><input type="radio" class="radio" value="11" checked name="dva"/>Нет</label></div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
