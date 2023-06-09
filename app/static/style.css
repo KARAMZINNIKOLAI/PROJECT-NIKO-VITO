@@ -344,7 +344,7 @@ border-left: 100px solid transparent;
 
   /* Чтобы размер картинки не менялся */
 
-  .div5 {
+  .ConstSize {
     max-width: 100%;
     min-width: 100%;
   }
@@ -477,6 +477,7 @@ form {
     text-align: left;
     height: 40px;
     padding-left: 5%;
+    padding-right: 5%;
   }
 
   /* Размеры кружков RADIO */
@@ -508,16 +509,16 @@ form {
 
   /* Типы сайтов */
 
-  .div25{
+  .Type_of_sytes{
     display: flex;
     justify-content: space-around;
     font-size: 30px;
     text-align: left;
   }
 
-  /* Наличие конкурентов-сайтов */
+  /* Радио-выбор */
 
-  .div26 {
+  .RadioChoice {
     text-align: left;
     font-size: 30px;
     padding-left: 5%;

@@ -6,6 +6,7 @@ function Is_it_syte_concurents(a) {
         document.getElementById("Block_First_Concurent").style.display='block';
         document.getElementById("Block_Advantages").style.display='block';
         document.getElementById("Block_examples_of_advantages").style.display='block';
+        document.getElementById("examples").checked = false;
         Vvod_First_Concurent.setAttribute('required', '');
         Vvod_Advantages.setAttribute('required','');
     } 
@@ -14,6 +15,7 @@ function Is_it_syte_concurents(a) {
         document.getElementById("Block_First_Concurent").style.display='none';
         document.getElementById("Block_Advantages").style.display='none';
         document.getElementById("Block_examples_of_advantages").style.display='none';
+        document.getElementById("examples").checked = false;
         document.getElementById("Vvod_First_Concurent").required = false;
         document.getElementById("Vvod_Advantages").required = false;
     } 
@@ -49,7 +51,7 @@ function Otobrazhenie_Block_Third_Concurent(a){
 function Is_it_examples_of_goals(a) {
     var vidimost = a;
 
-    if (vidimost == "show") {
+    if (vidimost == "Yes") {
         document.getElementById("examples_of_goals").style.display='block';
     }
 
@@ -62,10 +64,13 @@ function Is_it_examples_of_goals(a) {
 function Is_it_examples_of_advantages(a){
     var vidimost = a;
 
-    if (vidimost == "show") {
+    if (vidimost == "Yes") {
         document.getElementById("examples_of_advantages").style.display='block';
     }
 
+    else {
+        document.getElementById("examples_of_advantages").style.display='none';
+    }
 }
 
 /* Описания сайтов */

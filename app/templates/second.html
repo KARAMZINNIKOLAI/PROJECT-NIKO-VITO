@@ -39,7 +39,7 @@
                 <!-- Типы сайтов -->
                 <h2 class="form_text">Выберите тип сайта</h2>
                 
-                <div class="div25">
+                <div class="Type_of_sytes">
                     <div>
                         <div><label><input required type="radio" class="radio" value="Internet-Shop" onchange="Opisanie(value)" name="raz"/>Интернет-магазин</label></div>
                         <br>
@@ -82,7 +82,7 @@
                 <h2 class="form_text">Цели создаваемого сайта</h2>
                 <h3 class="form_text">Служат ориентиром для структуры и содержания сайта, а также определяют выбор платформы для его разработки. <br>Цели - это итоговый результат, который должен быть достигнут после создания сайта.</h3>
                 <textarea required placeholder="Укажите несколько целей"></textarea>
-                <div class="div26"><br><label><input type="radio" class="radio" value="show" onchange="Is_it_examples_of_goals(value)">Примеры целей</label></div>
+                <div class="RadioChoice"><br><label><input type="radio" class="radio" value="Yes" onchange="Is_it_examples_of_goals(value)">Примеры целей</label></div>
                 <!-- Примеры целей -->
                 <div id='examples_of_goals' style='display: none;'>
                     <br>
@@ -93,8 +93,8 @@
 
                 <!-- Наличие конкурениов-сайтов -->
                 <h2 class="form_text">Наличие конкурентов-сайтов</h2>
-                <div class="div26"><label><input required type="radio" class="radio" value="Yes" onChange="Is_it_syte_concurents(value)" name="dva"/>Да</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="No" onChange="Is_it_syte_concurents(value)" name="dva"/>Нет</label></div>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Yes" onchange="Is_it_syte_concurents(value)" name="dva"/>Да</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="No" onchange="Is_it_syte_concurents(value)" onclick="Is_it_examples_of_advantages(value)" name="dva"/>Нет</label></div>
 
                 <!-- Первый конкурент -->
                 <div id='Block_First_Concurent' style='display: none;'>
@@ -122,7 +122,7 @@
                     <h2 class="form_text">Преимущества вашего сайта</h2>
                     <textarea id="Vvod_Advantages" placeholder="Опишите преимущества вашего сайта перед сайтами-конкурентами"></textarea>
                 </div>
-                <div class="div26" id='Block_examples_of_advantages' style='display: none;'><br><label><input onchange="Is_it_examples_of_advantages(value)" value="show" type="radio" class="radio">Примеры преимуществ</label></div>
+                <div class="RadioChoice" id='Block_examples_of_advantages' style='display: none;'><br><label><input onclick="Is_it_examples_of_advantages(value)" id="examples" value="Yes" type="radio" class="radio">Примеры преимуществ</label></div>
                 <!-- Примеры преимуществ -->
                 <div id="examples_of_advantages" style='display: none;'>
                     <br>
@@ -133,28 +133,28 @@
 
                 <!-- Требования к функционалу сайта -->
                 <h2 class="form_text">Требования к функционалу сайта</h2>
-                <div class="div26"><label><input required type="radio" class="radio" value="Unical" name="tri"/>Сайт с уникальным функционалом</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="Basic_is_another_syte" name="tri"/>Функционал на основе другого сайта</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Unical" name="tri"/>Сайт с уникальным функционалом</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Basic_is_another_syte" name="tri"/>Функционал на основе другого сайта</label></div><br>
                 <textarea align="center" placeholder="Напишите свои предпочтения касаемо функционала сайта, если это нужно"></textarea>
 
                 <!-- Требования к дизайну сайта -->
                 <h2 class="form_text">Требования к функционалу сайта</h2>
 
                 <h2 class="form_text">Требования к цветовой гамме</h2><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="Me" name="chetire"/>Предложить цветовую гамму сайта</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="Developer" name="chetire"/>Предлагает разработчик</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="chetire"/>Предложить цветовую гамму сайта</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="chetire"/>Предлагает разработчик</label></div><br>
                 <textarea align="center" placeholder="Напишите свои предпочтения касаемо дизайна сайта, если это нужно"></textarea>
 
                 <h2 class="form_text">Дизайн</h2><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
                 <input type="url" placeholder="В случае необходимости введите ссылку на сайт, дизайн которого вам по душе">
 
                 <!-- Выбор языка интерфейса -->
                 <h2 class="form_text">Выберите язык интерфейса</h2>
-                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Русский</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Английский</label></div><br>
-                <div class="div26"><label><input required type="radio" class="radio" name="pat"/>Другой</label></div>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" name="pat"/>Русский</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" name="pat"/>Английский</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" name="pat"/>Другой</label></div>
 
                 <!-- Срок разработки -->
                 <h2 class="form_text">Срок разработки</h2>
@@ -162,7 +162,7 @@
 
                 <!-- Согласие на обработку персональных данных -->
                 <h2 class="form_text">Согласие на обработку персональных данных</h2>
-                <div class="div26"><label><input required type="radio" class="radio">Согласен на обработку персональных данных</label></div>
+                <div class="RadioChoice"><label><input required type="radio" class="radio">Согласен на обработку персональных данных</label></div>
 
                 <!-- Кнопка: СОЗДАТЬ ТЕХНИЧЕСКОЕ ЗАДАНИЕ -->
                 <br><br>
