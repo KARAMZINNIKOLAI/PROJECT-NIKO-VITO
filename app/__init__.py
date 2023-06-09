@@ -23,7 +23,7 @@ def create_app():
 
     app.add_url_rule("/form/", view_func=views.second_page)
 
-    app.add_url_rule("/form/complete", view_func=views.third_page)
+    app.add_url_rule("/form/complete/", view_func=views.third_page)
 
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
     db.init_app(app)
