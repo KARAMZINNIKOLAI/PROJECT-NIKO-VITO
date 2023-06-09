@@ -28,7 +28,7 @@
 
             <!-- Имя -->
             <h2 class="form_text">Имя</h2>
-            <form method="get" action="third.html">
+            <form method="get" action="{{ url_for('third_page') }}">
                 <input title="Можно ввести только русские буквы." pattern="^[А-Яа-яЁё\s]+$" name="name" type="text" placeholder="Введите своё имя" required />
 
                 <!-- Электронный адрес -->
@@ -41,36 +41,55 @@
                 
                 <div class="div25">
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Internet-Shop" name="raz"/>Интернет-магазин</label></div>
+                        <div><label><input required type="radio" class="radio" value="Internet-Shop" onchange="Opisanie(value)" name="raz"/>Интернет-магазин</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Blog" name="raz"/>Блог</label></div>
+                        <div><label><input required type="radio" class="radio" value="Blog" onchange="Opisanie(value)" name="raz"/>Блог</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Game Portal" name="raz"/>Игровой портал</label></div>
+                        <div><label><input required type="radio" class="radio" value="Game Portal" onchange="Opisanie(value)" name="raz"/>Игровой портал</label></div>
                     </div></label>
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Info Syte" name="raz"/>Информационный сайт</label></div>
+                        <div><label><input required type="radio" class="radio" value="Info Syte" onchange="Opisanie(value)" name="raz"/>Информационный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Medichine Syte" name="raz"/>Медицинский сайт</label></div>
+                        <div><label><input required type="radio" class="radio" value="Medichine Syte" onchange="Opisanie(value)" name="raz"/>Медицинский сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Syte-Visitka" name="raz"/>Сайт-визитка</label></div>
+                        <div><label><input required type="radio" class="radio" value="Syte-Visitka" onchange="Opisanie(value)" name="raz"/>Сайт-визитка</label></div>
                     </div>
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Educational Syte" name="raz"/>Образовательный сайт</label></div>
+                        <div><label><input required type="radio" class="radio" value="Educational Syte" onchange="Opisanie(value)" name="raz"/>Образовательный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Corporative Syte" name="raz"/>Корпоративный сайт</label></div>
+                        <div><label><input required type="radio" class="radio" value="Corporative Syte" onchange="Opisanie(value)" name="raz"/>Корпоративный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Another" name="raz"/>Другое (свой проект)</label></div>
+                        <div><label><input required type="radio" class="radio" value="Another" onchange="Opisanie(value)" name="raz"/>Другое (свой проект)</label></div>
                         <br>
                     </div>
                 </div>
+                <!-- Описания типов сайтов -->
+                <h2 class="form_text" id="Internet-Shop" style='display: none;'>Основная цель – продать товар или услугу. К обязательным раздела относятся каталог продукции и страница с заказом, предлагающий варианты оплаты.</h2>
+                <h2 class="form_text" id="Blog" style='display: none;'>Блог - это тандем новостной ленты, форума и гостевой книги. Возможность оставлять комментарии под каждой темой блога – отличный способ общения посетителей.</h2>
+                <h2 class="form_text" id="Game Portal" style='display: none;'>Игровой портал - предоставление информации о той или иной игре или их совокупности. Обычно, на портале есть несколько стандартных разделов: для поиска нужной информации по теме, блок новостей, ссылки на темы, связанные с игрой.</h2>
+                <h2 class="form_text" id="Info Syte" style='display: none;'>Информационный сайт - содержит большое количество информации, которая структурирована по тематическим разделам или самостоятельным единицам. Примером такого сайта может быть сайт журнала, виртуальной энциклопедии или библиотеки.</h2>
+                <h2 class="form_text" id="Syte-Visitka" style='display: none;'>Сайт-визитка - позиционирует компанию в интернете, информирует о товарах или услугах и показывает результаты деятельности вашей организации.</h2>
+                <h2 class="form_text" id="Educational Syte" style='display: none;'>Образовательный сайт - это информационная система, предназначенная для доступа широкого круга пользователей к информационным ресурсам и услугам образовательного характера с помощью интернета.</h2>
+                <h2 class="form_text" id="Corporative Syte" style='display: none;'>Корпоративный сайт - полноценное представительство компании в интернете и эффективный инструмент для привлечения и удержания новых клиентов.</h2>
+                <h2 class="form_text" id="Another" style='display: none;'>Напишите в свободной форме суть вашей идеи, например - "Я хочу продавать через сайт..."</h2>
 
                 <!-- Название сайта -->
+                <br>
                 <h2 class="form_text">Название сайта</h2>
                 <input required type="text" placeholder="Введите название сайта">
 
                 <!-- Цели создаваемого сайта -->
                 <h2 class="form_text">Цели создаваемого сайта</h2>
+                <h3 class="form_text">Служат ориентиром для структуры и содержания сайта, а также определяют выбор платформы для его разработки. <br>Цели - это итоговый результат, который должен быть достигнут после создания сайта.</h3>
                 <textarea required placeholder="Укажите несколько целей"></textarea>
+                <div class="div26"><br><label><input type="radio" class="radio" value="show" onchange="Is_it_examples_of_goals(value)">Примеры целей</label></div>
+                <!-- Примеры целей -->
+                <div id='examples_of_goals' style='display: none;'>
+                    <br>
+                    <h2 class="form_text">Примеры целей создания сайта интернет-магазин:</h2>
+                    <h3 class="form_text">1. Сформировать постоянный положительный денежный поток за счет продаж товаров через интернет. <br> 2. Расширения рынка сбыта за счет отсутствия географических ограничений (продажа товара любому покупателю, вне зависимости от того, где он физически находится). <br> 3. Продвижение товара за счет рекламы и партнерских программ в интернете.</h3>
+                    <br>
+                </div>
 
                 <!-- Наличие конкурениов-сайтов -->
                 <h2 class="form_text">Наличие конкурентов-сайтов</h2>
@@ -82,26 +101,34 @@
                     <br>
                     <h2 class="form_text">Сайт конкурента</h2>
                     <br>
-                    <input required type="text" value="" placeholder="Первый конкурент" onChange="Otobrazhenie_Block_Second_Concurent(value)">
+                    <input id='Vvod_First_Concurent' type="url" value="" placeholder="Первый конкурент" onChange="Otobrazhenie_Block_Second_Concurent(value)">
                 </div>
 
                 <!-- Второй конкурент -->
                 <div id='Block_Second_Concurent' style='display: none;'>
                     <br>
-                    <input type="text" value="" placeholder="Второй конкурент" onChange="Otobrazhenie_Block_Third_Concurent(value)">
+                    <input type="url" value="" placeholder="Второй конкурент" onChange="Otobrazhenie_Block_Third_Concurent(value)">
                 </div>
 
                 <!-- Третий конкурент -->
                 <div id='Block_Third_Concurent' style='display: none;'>
                     <br>
-                    <input type="text" placeholder="Третий конкурент">
+                    <input type="url" placeholder="Третий конкурент">
                 </div>
                 <br>
 
                 <!-- Преимущества сайта -->
-                <div id='Advantages' style='display: none;' align="center">
+                <div id='Block_Advantages' style='display: none;' align="center">
                     <h2 class="form_text">Преимущества вашего сайта</h2>
-                    <textarea required placeholder="Опишите преимущества вашего сайта перед сайтами-конкурентами"></textarea>
+                    <textarea id="Vvod_Advantages" placeholder="Опишите преимущества вашего сайта перед сайтами-конкурентами"></textarea>
+                </div>
+                <div class="div26" id='Block_examples_of_advantages' style='display: none;'><br><label><input onchange="Is_it_examples_of_advantages(value)" value="show" type="radio" class="radio">Примеры преимуществ</label></div>
+                <!-- Примеры преимуществ -->
+                <div id="examples_of_advantages" style='display: none;'>
+                    <br>
+                    <h2 class="form_text">Примеры преимуществ для сайта интернет-магазин:</h2>
+                    <h3 class="form_text">1. Более низкие цены за счет более низких расходов на ведение бизнеса. <br> 2. Уникальная продукция по доступным ценам. <br> 3. Постоянное наличие товара и его быстрая доставка.</h3>
+                    <br>
                 </div>
 
                 <!-- Требования к функционалу сайта -->
@@ -139,7 +166,7 @@
 
                 <!-- Кнопка: СОЗДАТЬ ТЕХНИЧЕСКОЕ ЗАДАНИЕ -->
                 <br><br>
-                <input name="button" class="swing" type="submit" value="Создать техническое задание" style="height: 10vh; background-color: brown; color: aliceblue; border-radius: 50px; font-size: 40px; cursor: pointer;"/>
+                <input name="button" class="swing" type="submit" value="Создать техническое задание" style="height: 10vh; background-color: brown; color: aliceblue; border-radius: 50px; font-size: 40px; cursor: pointer;">
             </form>
             <br><br>
         </div>
