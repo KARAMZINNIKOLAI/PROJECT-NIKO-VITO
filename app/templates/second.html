@@ -27,9 +27,13 @@
         <div class="div24">
 
             <!-- Имя -->
-            <h2 class="form_text">Имя</h2>
+            <h2 class="form_text">Имя заказчика</h2>
             <form method="get" action="{{ url_for('third_page') }}">
                 <input title="Можно ввести только русские буквы." pattern="^[А-Яа-яЁё\s]+$" name="name" type="text" placeholder="Введите своё имя" required />
+                
+                <!-- Телефон -->
+                <h2 class="form_text">Телефон</h2>
+                <input required type="number" placeholder="Введите контактный телефон">
 
                 <!-- Электронный адрес -->
                 <h2 class="form_text">Электронный адрес</h2>
@@ -41,26 +45,25 @@
                 
                 <div class="Type_of_sytes">
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Internet-Shop" onchange="Opisanie(value)" name="raz"/>Интернет-магазин</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Internet-Shop" onchange="Opisanie(value)" name="raz"/>Интернет-магазин</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Blog" onchange="Opisanie(value)" name="raz"/>Блог</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Blog" onchange="Opisanie(value)" name="raz"/>Блог</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Game Portal" onchange="Opisanie(value)" name="raz"/>Игровой портал</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Game Portal" onchange="Opisanie(value)" name="raz"/>Игровой портал</label></div>
                     </div></label>
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Info Syte" onchange="Opisanie(value)" name="raz"/>Информационный сайт</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Info Syte" onchange="Opisanie(value)" name="raz"/>Информационный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Medichine Syte" onchange="Opisanie(value)" name="raz"/>Медицинский сайт</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Medichine Syte" onchange="Opisanie(value)" name="raz"/>Медицинский сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Syte-Visitka" onchange="Opisanie(value)" name="raz"/>Сайт-визитка</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Syte-Visitka" onchange="Opisanie(value)" name="raz"/>Сайт-визитка</label></div>
                     </div>
                     <div>
-                        <div><label><input required type="radio" class="radio" value="Educational Syte" onchange="Opisanie(value)" name="raz"/>Образовательный сайт</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Educational Syte" onchange="Opisanie(value)" name="raz"/>Образовательный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Corporative Syte" onchange="Opisanie(value)" name="raz"/>Корпоративный сайт</label></div>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Corporative Syte" onchange="Opisanie(value)" name="raz"/>Корпоративный сайт</label></div>
                         <br>
-                        <div><label><input required type="radio" class="radio" value="Another" onchange="Opisanie(value)" name="raz"/>Другое (свой проект)</label></div>
-                        <br>
+                        <div class="RadioChoice"><label><input required type="radio" class="radio" value="Another" onchange="Opisanie(value)" name="raz"/>Другое (свой проект)</label></div>
                     </div>
                 </div>
                 <!-- Описания типов сайтов -->
@@ -72,6 +75,7 @@
                 <h2 class="form_text" id="Educational Syte" style='display: none;'>Образовательный сайт - это информационная система, предназначенная для доступа широкого круга пользователей к информационным ресурсам и услугам образовательного характера с помощью интернета.</h2>
                 <h2 class="form_text" id="Corporative Syte" style='display: none;'>Корпоративный сайт - полноценное представительство компании в интернете и эффективный инструмент для привлечения и удержания новых клиентов.</h2>
                 <h2 class="form_text" id="Another" style='display: none;'>Напишите в свободной форме суть вашей идеи, например - "Я хочу продавать через сайт..."</h2>
+                <div id='Another2' style='display: none;'><textarea id="Svoy_Project" placeholder="Расскажите про свой проект"></textarea></div>
 
                 <!-- Название сайта -->
                 <br>
@@ -91,7 +95,11 @@
                     <br>
                 </div>
 
-                <!-- Наличие конкурениов-сайтов -->
+                <!-- Целевая аудитория -->
+                <h2 class="form_text">Целевая аудитория</h2>
+                <textarea required placeholder="Напишите целевую аудиторию, для которой предназначается сайт"></textarea>
+
+                <!-- Наличие конкурентов-сайтов -->
                 <h2 class="form_text">Наличие конкурентов-сайтов</h2>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Yes" onchange="Is_it_syte_concurents(value)" name="dva"/>Да</label></div><br>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="No" onchange="Is_it_syte_concurents(value)" onclick="Is_it_examples_of_advantages(value)" name="dva"/>Нет</label></div>
@@ -131,24 +139,134 @@
                     <br>
                 </div>
 
+                <h2 class="form_text">Основные требования к сайту</h2>
+                <!-- Требования к структуре и функционированию сайта -->
+                <textarea required align="center" placeholder="Напишите свои требования к структуре и функционированию сайта"></textarea>
+                
+                <!-- Структура сайта -->
+                <h2 class="form_text">Структура сайта</h2>
+                <div>
+                    <h3 class="form_text">Разделы</h3>
+                    <input required id='Vvod_First_Razdel' type="text" value="" placeholder="Первый раздел" onChange="Otobrazhenie_Block_Second_Razdel(value)"><br><br>
+                    <textarea required align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Second_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Второй раздел" onChange="Otobrazhenie_Block_Third_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Third_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Третий раздел" onChange="Otobrazhenie_Block_Four_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Four_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Четвёрый раздел" onChange="Otobrazhenie_Block_Five_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Five_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Пятый раздел" onChange="Otobrazhenie_Block_Six_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Six_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Шестой раздел" onChange="Otobrazhenie_Block_Seven_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Seven_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Седьмой раздел" onChange="Otobrazhenie_Block_Eight_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Eight_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Восьмой раздел" onChange="Otobrazhenie_Block_Nine_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Nine_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Девятый раздел" onChange="Otobrazhenie_Block_Ten_Razdel(value)"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <div id='Block_Ten_Razdel' style='display: none;'>
+                    <br>
+                    <input type="text" value="" placeholder="Десятый раздел"><br><br>
+                    <textarea align="center" placeholder="Напишите свои требования к описанию страниц данного раздела"></textarea>
+                </div>
+
+                <!-- Требования к навигации -->
+                <h3 class="form_text">Требования к навигации</h3>
+                <textarea required align="center" placeholder="Напишите свои требования к к навигации по страницам сайта"></textarea>
+
                 <!-- Требования к функционалу сайта -->
                 <h2 class="form_text">Требования к функционалу сайта</h2>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Unical" name="tri"/>Сайт с уникальным функционалом</label></div><br>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Basic_is_another_syte" name="tri"/>Функционал на основе другого сайта</label></div><br>
-                <textarea align="center" placeholder="Напишите свои предпочтения касаемо функционала сайта, если это нужно"></textarea>
+                <textarea align="center" placeholder="Напишите свои общие требования касаемо функционала сайта, если это нужно"></textarea>
 
                 <!-- Требования к дизайну сайта -->
-                <h2 class="form_text">Требования к функционалу сайта</h2>
+                <h2 class="form_text">Требования к дизайну сайта</h2>
 
-                <h2 class="form_text">Требования к цветовой гамме</h2><br>
+                <h3 class="form_text">Требования к цветовой гамме</h3>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="chetire"/>Предложить цветовую гамму сайта</label></div><br>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="chetire"/>Предлагает разработчик</label></div><br>
-                <textarea align="center" placeholder="Напишите свои предпочтения касаемо дизайна сайта, если это нужно"></textarea>
+                <textarea align="center" placeholder="Напишите свои общие требования касаемо дизайна сайта, если это нужно"></textarea>
 
-                <h2 class="form_text">Дизайн</h2><br>
+                <h3 class="form_text">Дизайн</h3>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
                 <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
                 <input type="url" placeholder="В случае необходимости введите ссылку на сайт, дизайн которого вам по душе">
+
+                <!-- Требования к шрифту сайта -->
+                <h3 class="form_text">Требования к шрифту сайта</h3>
+                <textarea required align="center" placeholder="Напишите свои общие требования касаемо шрифта сайта"></textarea>
+
+                <!-- Требования к дизайну элементов сайта -->
+                <h2 class="form_text">Требования к дизайну элементов сайта</h2>
+                <h3 class="form_text">Логотип</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <h3 class="form_text">Шапка сайта</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <h3 class="form_text">Основное и второстепенное меню</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <h3 class="form_text">Боковое меню</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <h3 class="form_text">Основное поле контента</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <h3 class="form_text">Подложка</h3>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Me" name="shest"/>Предложить дизайн</label></div><br>
+                <div class="RadioChoice"><label><input required type="radio" class="radio" value="Developer" name="shest"/>Предлагает разработчик</label></div><br>
+                <textarea align="center" placeholder="В случае необходимости введите свои требования касаемо дизайна"></textarea>
+
+                <!-- Требования для работы серверной части -->
+                <h2 class="form_text">Требования для работы серверной части</h2>
+                <textarea required align="center" placeholder="Напишите свои общие требования касаемо работы серверной части сайта. Например: Веб-сайт должен функционировать в стандартной операционной серверной среде и не требовать приобретения дополнительных программных лицензий для работы сайта и подключения пользователей."></textarea>
 
                 <!-- Выбор языка интерфейса -->
                 <h2 class="form_text">Выберите язык интерфейса</h2>

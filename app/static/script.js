@@ -135,11 +135,117 @@ function Opisanie(a) {
 
     if (type == "Another") {
         document.getElementById("Another").style.display='block';
+        document.getElementById("Another2").style.display='block';
+        Svoy_Project.setAttribute('required', '');
     }
 
     else {
         document.getElementById("Another").style.display='none';
+        document.getElementById("Another2").style.display='none';
+        document.getElementById("Svoy_Project").required = false;
     }
 
 }
 
+
+/* Если пользователь напишет первый раздел, появится поле, где можно написать второй и т.д. */
+function Otobrazhenie_Block_Second_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Second_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Second_Razdel").style.display='block';
+    }   
+}
+
+function Otobrazhenie_Block_Third_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Third_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Third_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Four_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Four_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Four_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Five_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Five_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Five_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Six_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Six_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Six_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Seven_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Seven_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Seven_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Eight_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Eight_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Eight_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Nine_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Nine_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Nine_Razdel").style.display='block';
+    }   
+}
+function Otobrazhenie_Block_Ten_Razdel(a){
+    var empt = a;
+
+    if (empt == "") {
+        document.getElementById("Block_Ten_Razdel").style.display='none';
+    }
+
+    else {
+        document.getElementById("Block_Ten_Razdel").style.display='block';
+    }   
+}

@@ -465,7 +465,7 @@ form {
     max-width: 90%;
     min-width: 90%;
     height: 10vh;
-    font-size: 20pt; 
+    font-size: 17pt; 
     font-family: "Cuprum", cursive;
     align-self: center;
     border: 2px dashed red;
@@ -476,7 +476,7 @@ form {
     max-width: 90%;
     min-width: 90%;
     height: 10vh;
-    font-size: 20pt; 
+    font-size: 17pt; 
     font-family: "Cuprum", cursive;
     align-self: center;
     border: 2px solid black;
@@ -489,7 +489,7 @@ form {
     max-width: 90%;
     min-width: 90%;
     height: 3vh;
-    font-size: 20pt; 
+    font-size: 17pt; 
     font-family: "Cuprum", cursive;
   }
 
@@ -552,6 +552,7 @@ form {
 
   .RadioChoice {
     text-align: left;
-    font-size: 30px;
+    font-size: 17pt;
     padding-left: 5%;
+    width: 100%
   }
